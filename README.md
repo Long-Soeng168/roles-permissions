@@ -1,6 +1,6 @@
 ## How to clone project
 
-- git clone [https://github.com/Long-Soeng168/roles-permissions.git]
+- git clone https://github.com/Long-Soeng168/roles-permissions.git
 - composer install
 - cp .env.example .env
 - php artisan key:generate
@@ -9,7 +9,15 @@
 - npm run build (or npm run dev)
 - php artisan serve
 
-
+## About this Project
+this project we aim for initialize laravel with all dependencies required
+like : 
+- laravel/breeze
+- spatie/laravel-permission
+- unisharp/laravel-filemanager
+- intervention/image
+- ckeditorV4
+- tailwindCSS
 
 
 
