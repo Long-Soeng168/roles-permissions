@@ -1,15 +1,13 @@
 ## How to clone project
 
-- 1.Run git clone <my-cool-project>
-- 2.Run composer install
-- 3.Run cp .env.example .env
-- 4.Run php artisan key:generate
-- 5.Run php artisan migrate
-
-- 6.Run npm install
-- 7.Run npm run build (or npm run dev)
-
-- 8.Run php artisan serve
+- 1. git clone <my-cool-project>
+- 2. composer install
+- 3. cp .env.example .env
+- 4. php artisan key:generate
+- 5. php artisan migrate
+- 6. npm install
+- 7. npm run build (or npm run dev)
+- 8. php artisan serve
 
 
 
