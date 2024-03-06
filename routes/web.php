@@ -13,7 +13,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::resource('permission', App\Http\Controllers\PermissionController::class);
+Route::resource('permissions', App\Http\Controllers\PermissionController::class);
+Route::get('permissions/{id}/delete', [App\Http\Controllers\PermissionController::class, 'destroy']);
+
+Route::resource('roles', App\Http\Controllers\RoleController::class);
+Route::get('roles/{id}/delete', [App\Http\Controllers\RoleController::class, 'destroy']);
+Route::get('roles/{id}/give-permissions', [App\Http\Controllers\RoleController::class, 'givePermissionsToRole']);
+Route::put('roles/{id}/give-permissions', [App\Http\Controllers\RoleController::class, 'updatePermissionsToRole']);
 
 
 
@@ -39,4 +45,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
