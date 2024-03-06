@@ -1,6 +1,6 @@
 ## How to clone project
 
-- git clone [<my-cool-project>]
+- git clone [https://github.com/Long-Soeng168/roles-permissions.git]
 - composer install
 - cp .env.example .env
 - php artisan key:generate
