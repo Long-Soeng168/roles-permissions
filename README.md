@@ -1,6 +1,6 @@
 ## How to clone project
 
-- git clone <my-cool-project>
+- git clone [<my-cool-project>]
 - composer install
 - cp .env.example .env
 - php artisan key:generate
