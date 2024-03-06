@@ -1,15 +1,15 @@
-<p>
-1.Run git clone <my-cool-project>
-2.Run composer install
-3.Run cp .env.example .env
-4.Run php artisan key:generate
-5.Run php artisan migrate
+## How to clone project
 
-6.Run npm install
-7.Run npm run build (or npm run dev)
+- 1.Run git clone <my-cool-project>
+- 2.Run composer install
+- 3.Run cp .env.example .env
+- 4.Run php artisan key:generate
+- 5.Run php artisan migrate
 
-8.Run php artisan serve
-</p>
+- 6.Run npm install
+- 7.Run npm run build (or npm run dev)
+
+- 8.Run php artisan serve
 
 
 
