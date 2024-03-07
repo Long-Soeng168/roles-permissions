@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,15 +16,21 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::resource('permissions', App\Http\Controllers\PermissionController::class);
-Route::get('permissions/{id}/delete', [App\Http\Controllers\PermissionController::class, 'destroy']);
+Route::group([
+    'middleware' => 'role:Super-Admin|Admin'
+], function() {
+    Route::resource('permissions', PermissionController::class);
+    Route::get('permissions/{id}/delete', [PermissionController::class, 'destroy']);
 
-Route::resource('roles', App\Http\Controllers\RoleController::class);
-Route::get('roles/{id}/delete', [App\Http\Controllers\RoleController::class, 'destroy']);
-Route::get('roles/{id}/give-permissions', [App\Http\Controllers\RoleController::class, 'givePermissionsToRole']);
-Route::put('roles/{id}/give-permissions', [App\Http\Controllers\RoleController::class, 'updatePermissionsToRole']);
+    Route::resource('roles', RoleController::class);
+    Route::get('roles/{id}/delete', [RoleController::class, 'destroy']);
+    Route::get('roles/{id}/give-permissions', [RoleController::class, 'givePermissionsToRole']);
+    Route::put('roles/{id}/give-permissions', [RoleController::class, 'updatePermissionsToRole']);
 
-
+    Route::resource('users', UserController::class);
+    Route::put('users/{user}/update-password', [UserController::class, 'updateUserPassword']);
+    Route::get('users/{user}/delete', [UserController::class, 'destroy']);
+});
 
 
 

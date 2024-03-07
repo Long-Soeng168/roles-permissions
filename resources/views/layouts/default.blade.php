@@ -13,38 +13,36 @@
 
     <!-- Define custom CSS class -->
 
+    <!-- Tailwind cdn -->
+    <!-- Comment this when make for production and run "npm run build" -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <!-- End Tailwind cdn -->
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="antialiased">
-    <div
-        class="relative min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-        <div class="flex justify-between max-w-screen-xl mx-auto bg-slate-200">
-            <div class="bg-slate-200 p-6 text-right z-10">
-                <a href="{{ url('/permissions') }}" class="nav-link">Permissions</a>
-                <a href="{{ url('/roles') }}" class="ml-4 nav-link">Roles</a>
-                <a href="{{ url('/users') }}" class="ml-4 nav-link">Users</a>
-            </div>
-            @if (Route::has('login'))
-            <div class="bg-slate-200 p-6 text-right z-10">
-                @auth
-                <a href="{{ url('/dashboard') }}" class="nav-link">Dashboard</a>
-                @else
-                <a href="{{ route('login') }}" class="nav-link">Log in</a>
-                @if (Route::has('register'))
-                <a href="{{ route('register') }}" class="ml-4 nav-link">Register</a>
-                @endif
-                @endauth
-            </div>
-            @endif
-        </div>
+<body class="antialiased font-sans">
+    <div class="min-h-screen bg-gray-100">
+        @include('layouts.navigation')
 
+        <!-- Page Heading -->
+        @if (isset($header))
+            <header class="bg-white shadow">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    {{ $header }}
+                </div>
+            </header>
+        @endif
 
-
+        <!-- Page Content -->
         <main class="max-w-screen-xl mx-auto">
             @yield('content')
         </main>
-    </div>
 </body>
 
 </html>

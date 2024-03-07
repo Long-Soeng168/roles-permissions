@@ -22,9 +22,15 @@
             @method('PUT')
 
             <div class="mb-6">
-                <label for="permissions" class="block mb-2">Permissions</label>
+                <div class="flex gap-10">
+                    <label for="permissions" class="block mb-2 text-lg font-bold">Permissions</label>
+                    <div class="flex items-center gap-2">
+                        <input type="checkbox" id="toggle_all_permissions">
+                        <label for="toggle_all_permissions">Give All Permissions</label>
+                    </div>
+                </div>
 
-                <div class="grid grid-cols-4 gap-4">
+                <div class="grid grid-cols-4 gap-4" id="permissionsContainer">
                     @foreach ($permissions as $permission)
                     <div class="flex items-center">
                         <input
@@ -32,14 +38,41 @@
                             id="permission_{{ $permission->id }}"
                             name="permissions[]"
                             value="{{ $permission->name }}"
-                            class="mr-2"
+                            class="mr-2 permission-checkbox"
                             {{ in_array($permission->id, $rolePermissions) ? "checked" : '' }}
                         >
                         <label for="permission_{{ $permission->id }}">{{ $permission->name }}</label>
                     </div>
-
                     @endforeach
                 </div>
+
+                <x-input-error :messages="$errors->get('permissions')" class="mt-2" />
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        var toggleAllCheckbox = document.getElementById('toggle_all_permissions');
+                        var permissionCheckboxes = document.querySelectorAll('.permission-checkbox');
+
+                        toggleAllCheckbox.addEventListener('change', function () {
+                            permissionCheckboxes.forEach(function (checkbox) {
+                                checkbox.checked = toggleAllCheckbox.checked;
+                            });
+                        });
+
+                        permissionCheckboxes.forEach(function (checkbox) {
+                            checkbox.addEventListener('change', function () {
+                                var allChecked = true;
+                                permissionCheckboxes.forEach(function (checkbox) {
+                                    if (!checkbox.checked) {
+                                        allChecked = false;
+                                    }
+                                });
+                                toggleAllCheckbox.checked = allChecked;
+                            });
+                        });
+                    });
+                </script>
+
             </div>
 
             <div class="mb-6">

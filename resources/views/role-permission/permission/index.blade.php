@@ -11,8 +11,11 @@
     <div class="p-4 border-b border-gray-200">
         <h4 class="text-lg font-semibold">
             Permissions
+            @can('create permission')
             <a href="{{ url('permissions/create') }}" class="bg-purple-500 text-white px-4 rounded-md float-right">Add
-                Permission</a>
+                Permission
+            </a>
+            @endcan
         </h4>
     </div>
     <div class="p-4">
@@ -36,14 +39,18 @@
                     <td class="px-6 py-4 whitespace-nowrap">{{ $loop->iteration }}</td>
                     <td class="px-6 py-4 whitespace-nowrap">{{ $permission->name }}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-center">
+                        @can('update permission')
                         <a href='{{ url("permissions/$permission->id/edit") }}'
                             class="bg-blue-500 cursor-pointer hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             Edit
                         </a>
+                        @endcan
+                        @can('delete permission')
                         <a href='{{ url("permissions/$permission->id/delete") }}'
                             class="bg-red-500 cursor-pointer hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">
                             Delete
                         </a>
+                        @endcan
                     </td>
                 </tr>
                 @endforeach
