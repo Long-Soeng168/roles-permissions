@@ -34,9 +34,11 @@ Route::group([
 
 Route::get('ckeditor4-demo', function() {
     return view('ckeditor-demo.ckeditor4-demo');
+})->name('ckeditor4');
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
 });
-
-
 
 
 
