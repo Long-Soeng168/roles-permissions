@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::group([
-    'middleware' => 'role:Super-Admin|Admin'
+    'middleware' => 'role:super-admin|admin'
 ], function() {
     Route::resource('permissions', PermissionController::class);
     Route::get('permissions/{id}/delete', [PermissionController::class, 'destroy']);
