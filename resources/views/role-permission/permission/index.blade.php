@@ -12,7 +12,7 @@
         <h4 class="text-lg font-semibold">
             Permissions
             @can('create permission')
-            <a href="{{ url('permissions/create') }}" class="bg-purple-500 text-white px-4 rounded-md float-right">Add
+            <a href="{{ url('permissions/create') }}" class="bg-slate-500 text-white px-4 rounded-md float-right">Add
                 Permission
             </a>
             @endcan

@@ -12,7 +12,7 @@
         <h4 class="text-lg font-semibold">
             Users
             @can('create user')
-            <a href="{{ url('users/create') }}" class="bg-purple-500 text-white px-4 rounded-md float-right">
+            <a href="{{ url('users/create') }}" class="bg-slate-500 text-white px-4 rounded-md float-right">
                 Add User
             </a>
             @endcan

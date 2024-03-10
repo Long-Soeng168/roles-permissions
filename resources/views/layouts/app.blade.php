@@ -13,6 +13,16 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <!-- Tailwind cdn -->
+        <!-- Comment this when make for production and run "npm run build" -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                darkMode: 'class',
+            }
+        </script>
+        <!-- End Tailwind cdn -->
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">

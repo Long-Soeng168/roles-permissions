@@ -12,7 +12,7 @@
         <h4 class="text-lg font-semibold">
             Roles
             @can('create role')
-            <a href="{{ url('roles/create') }}" class="bg-purple-500 text-white px-4 rounded-md float-right">
+            <a href="{{ url('roles/create') }}" class="bg-slate-500 text-white px-4 rounded-md float-right">
                 Add Role
             </a>
             @endcan
