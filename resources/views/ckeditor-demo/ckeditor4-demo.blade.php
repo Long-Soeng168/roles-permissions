@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="my-4">
-        <textarea name="description" id="" cols="30" rows="10"></textarea>
+        <textarea name="" id="description" cols="30" rows="10"></textarea>
         {{-- <script src="https://cdn.ckeditor.com/4.22.1/full/ckeditor.js"></script> --}}
         <script src="{{ asset('/assets/ckeditor/ckeditor4/ckeditor.js') }}"></script>
         <script>
