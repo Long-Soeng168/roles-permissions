@@ -32,6 +32,10 @@ Route::group([
     Route::get('users/{user}/delete', [UserController::class, 'destroy']);
 });
 
+Route::get('ckeditor4-demo', function() {
+    return view('ckeditor-demo.ckeditor4-demo');
+});
+
 
 
 

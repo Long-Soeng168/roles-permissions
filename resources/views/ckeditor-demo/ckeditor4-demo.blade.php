@@ -1,0 +1,19 @@
+@extends('layouts.default')
+
+@section('content')
+    <div class="my-4">
+        <textarea name="description" id="" cols="30" rows="10"></textarea>
+        {{-- <script src="https://cdn.ckeditor.com/4.22.1/full/ckeditor.js"></script> --}}
+        <script src="{{ asset('/assets/ckeditor/ckeditor4/ckeditor.js') }}"></script>
+        <script>
+               var options = {
+                 filebrowserImageBrowseUrl: '{{ asset("laravel-filemanager?type=Images")}}',
+                 filebrowserImageUploadUrl: '{{ asset("laravel-filemanager/upload?type=Images&_token=")}}',
+                 filebrowserBrowseUrl: '{{ asset("laravel-filemanager?type=Files")}}',
+                 filebrowserUploadUrl: '{{ asset("laravel-filemanager/upload?type=Files&_token=")}}'
+               };
+
+              CKEDITOR.replace( 'description', options);
+       </script>
+    </div>
+@endsection
