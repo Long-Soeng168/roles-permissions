@@ -5,6 +5,7 @@
 - cp .env.example .env
 - php artisan key:generate
 - php artisan migrate
+- php artisan db:seed --class="UserRolePermissionSeeder"
 - npm install
 - npm run build (or npm run dev)
 - php artisan serve
