@@ -27,6 +27,12 @@
                     <x-nav-link :href="route('ckeditor4')" :active="request()->routeIs('ckeditor4')">
                         {{ __('CK Editor 4') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('ckeditor5')" :active="request()->routeIs('ckeditor5')">
+                        {{ __('CK Editor 5') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('slide-infinite-loop')" :active="request()->routeIs('slide-infinite-loop')">
+                        {{ __('Slide Show') }}
+                    </x-nav-link>
                 </div>
             </div>
 

@@ -22,6 +22,7 @@
                 darkMode: 'class',
             }
         </script>
+         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
         <!-- End Tailwind cdn -->
     </head>
     <body class="font-sans text-gray-900 antialiased">

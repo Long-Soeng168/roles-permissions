@@ -14,9 +14,11 @@
             };
             var areas = Array('description', 'description_label', 'description_khmer');
             areas.forEach(function(area) {
-                      CKEDITOR.replace(area, options);
-                  });
+                CKEDITOR.replace(area, options);
+            });
 
         </script>
+
+
     </div>
 @endsection

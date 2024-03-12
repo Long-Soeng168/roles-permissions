@@ -36,6 +36,14 @@ Route::get('ckeditor4-demo', function() {
     return view('ckeditor-demo.ckeditor4-demo');
 })->name('ckeditor4');
 
+Route::get('ckeditor5-demo', function() {
+    return view('ckeditor-demo.ckeditor5-demo');
+})->name('ckeditor5');
+
+Route::get('slide-infinite-loop', function() {
+    return view('slide-show.slide-infinite-loop');
+})->name('slide-infinite-loop');
+
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
